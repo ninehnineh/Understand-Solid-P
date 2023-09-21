@@ -42,7 +42,7 @@
   - It should not have $\textcolor{Yellow}{\textsf{Print()}}$, $\textcolor{Yellow}{\textsf{SaveToFile()}}$, $\textcolor{Yellow}{\textsf{LoadFromFile()}}$ or anything related to Print Cart and Save/Load file because:
     - What if we need to print Cart in XML, HTML form, we need to write more $\textcolor{Yellow}{\textsf{PrintXML()}}$, $\textcolor{Yellow}{\textsf{PrintHTML()}}$
     - What if we need more save/load methods to serve a new requirement like $\textcolor{Yellow}{\textsf{SaveJSonToFile()}}$, $\textcolor{Yellow}{\textsf{LoadJsonFromFile()}}$
-  - If we are allowed to do all of the above, our class will grow until one day if you want to repair or maintain, you may have to change a few functions in the chaos
+  - If we are allowed to do all of the above, our class will grow until one day if you want to repair or maintain, you will probably have to change a few functions in the chaos. And we are not sure whether our change will have any effect on the rest of that class, because the reason our change is not the same.
 - Solution: Instead of going to a specific class to edit and retest, we separate functions that have different reasons to change into different classes.
   
 ## Open-Closed-Principle
