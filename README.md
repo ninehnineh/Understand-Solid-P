@@ -3,7 +3,7 @@
 ## Table of contents
 - [Overview](#Overview)
 - [Single-Responsibility-Principle](#Single-Responsibility-Principle)
-- [Open/Closed-Principle](#Open/Closed-Principle)
+- [Open-Closed-Principle](#Open/Closed-Principle)
 - [Liskov-Substitution-Principle](#Liskov-Substitution-Principle)
 - [Interface-Segregation-Principle](#Interface-Segregation-Principle)
 - [Dependency-Inversion-Principle](#Dependency-Inversion-Principle)
@@ -15,7 +15,7 @@
 ## Single-Responsibility-Principle
 
   
-## Open/Closed-Principle
+## Open-Closed-Principle
 - A Module should be open for extension but closed for modification or we can say that the classes you use should be open to being extended and closed to being modified
 
 - We build an application, using SQL server. Suppose the build is completed and goes live fine.
