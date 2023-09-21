@@ -13,10 +13,40 @@
 - This repository contains demonstrations of the SOLID Principle and my thoughts on it as I am in the process of learning and applying it on my path to becoming a good programmer in the future
   
 ## Single-Responsibility-Principle
-
+      Gather together the things that change for the same reasons. Separate those things that change for different reasons
+      
+- This principle establishes that a component or class must have a single, simple and concrete responsibility, which simplifies the code by avoiding the existence of classes that fulfill multiple functions, which are difficult to memorize and often mean a waste of time looking for which part of the code does which function
+- Let's see $\textcolor{gray}{\textsf{ShoppingCartServices.cs}}$:
+  
+        public class ShoppingCartServices
+        {
+          private List<ShoppingCartModel> items = new List<ShoppingCartModel>();
+          public IEnumerable<ShoppingCartModel> Items { get { return items; } }
+  
+          public void Add(ShoppingCartModel item) => items.Add(item);
+          public void Remove(ShoppingCartModel item) => items.Remove(item);
+          public double GetTotal() => items.Sum(i => i.Quantity * i.Price);
+          public void Clear() => items.Clear();
+          public void Print()
+          {
+              foreach (var item in items)
+              {
+                  Console.WriteLine($"{item.Title} - {item.Price:C} x {item.Quantity} = {item.Quantity * item.Price:C}");
+              }
+          }
+          public void SaveToFile(string fileName) => Console.WriteLine("Write file success...");
+          public void LoadFromFile(string fileName) => Console.WriteLine("Load file success...");
+        }
+  
+- Problem: This class violated SRP because if $\textcolor{gray}{\textsf{ShoppingCartServices.cs}}$ is responsible for managing a shopping cart, so managing a shopping cart is the only thing this class should do
+  - It should not have $\textcolor{Yellow}{\textsf{Print()}}$, $\textcolor{Yellow}{\textsf{SaveToFile()}}$, $\textcolor{Yellow}{\textsf{LoadFromFile()}}$ or anything related to Print Cart and Save/Load file because:
+    - What if we need to print Cart in XML, HTML form, we need to write more $\textcolor{Yellow}{\textsf{PrintXML()}}$, $\textcolor{Yellow}{\textsf{PrintHTML()}}$
+    - What if we need more save/load methods to serve a new requirement like $\textcolor{Yellow}{\textsf{SaveJSonToFile()}}$, $\textcolor{Yellow}{\textsf{LoadJsonFromFile()}}$
+  - If we are allowed to do all of the above, our class will grow until one day if you want to repair or maintain, you may have to change a few functions in the chaos
+- Solution: Instead of going to a specific class to edit and retest, you separate different functions into different classes.
   
 ## Open-Closed-Principle
-- A Module should be open for extension but closed for modification or we can say that the classes you use should be open to being extended and closed to being modified
+       A Module should be open for extension but closed for modification 
 
 - We build an application, using SQL server. Suppose the build is completed and goes live fine.
 
