@@ -43,7 +43,7 @@
     - What if we need to print Cart in XML, HTML form, we need to write more $\textcolor{Yellow}{\textsf{PrintXML()}}$, $\textcolor{Yellow}{\textsf{PrintHTML()}}$
     - What if we need more save/load methods to serve a new requirement like $\textcolor{Yellow}{\textsf{SaveJSonToFile()}}$, $\textcolor{Yellow}{\textsf{LoadJsonFromFile()}}$
   - If we are allowed to do all of the above, our class will grow until one day if you want to repair or maintain, you may have to change a few functions in the chaos
-- Solution: Instead of going to a specific class to edit and retest, you separate different functions into different classes.
+- Solution: Instead of going to a specific class to edit and retest, we separate functions that have different reasons to change into different classes.
   
 ## Open-Closed-Principle
        A Module should be open for extension but closed for modification 
