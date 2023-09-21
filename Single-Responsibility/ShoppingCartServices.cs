@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Single_Responsibility
 {
-    internal class ShoppingCartServices
+    public class ShoppingCartServices
     {
         private List<ShoppingCartModel> items = new List<ShoppingCartModel>();
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Single_Responsibility
 {
-    internal class ShoppingCartModel
+    public class ShoppingCartModel
     {
         public int ProductId { get; set; }
         public int Quantity { get; set; }
