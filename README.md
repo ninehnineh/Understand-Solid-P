@@ -3,7 +3,7 @@
 ## Table of contents
 - [Overview](#Overview)
 - [Single-Responsibility-Principle](#Single-Responsibility-Principle)
-- [Open-Closed-Principle](#Open/Closed-Principle)
+- [Open-Closed-Principle](#Open-Closed-Principle)
 - [Liskov-Substitution-Principle](#Liskov-Substitution-Principle)
 - [Interface-Segregation-Principle](#Interface-Segregation-Principle)
 - [Dependency-Inversion-Principle](#Dependency-Inversion-Principle)
